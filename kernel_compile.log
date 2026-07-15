@@ -1,0 +1,228 @@
+  GEN     ./Makefile
+  Using .. as source for kernel
+  CALL    ../scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  CC      fs/pstore/inode.o
+  CC      fs/pstore/platform.o
+  CC      fs/pstore/pmsg.o
+  CC      fs/pstore/ram.o
+  CC      fs/pstore/ram_core.o
+  CC      fs/quota/dquot.o
+  CC      fs/proc/task_mmu.o
+  CC      fs/ramfs/inode.o
+  CC      fs/ramfs/file-mmu.o
+  CC      fs/sdcardfs/dentry.o
+-- Baseband-guard: flask.h found, skip generation
+grep: warning: stray \ before #
+-- Baseband-guard: CONFIG_BBG enabled, now checking...
+-- Kernel Version: 4.19
+-- Baseband_guard: Found DEFINE_LSM,now checking CONFIG_LSM...
+-- CONFIG_LSM value: "lockdown,yama,loadpin,safesetid,integrity,selinux,smack,tomoyo,apparmor,bpf,baseband_guard"
+-- Baseband-guard: Okay, Baseband_guard was found in CONFIG_LSM
+-- BBG was enabled!
+-- BBG version: cef0daae
+-- BBG repo: https://github.com/vc-teahouse/Baseband-guard
+  CC      fs/quota/quota_v2.o
+  CC      security/baseband-guard/baseband_guard.o
+  CC      security/baseband-guard/tracing/tracing.o
+  AR      security/baseband-guard/built-in.a
+  CC      fs/sysfs/file.o
+  CC      fs/sysfs/dir.o
+  CC      fs/proc/inode.o
+  AR      security/built-in.a
+  CC      fs/sdcardfs/file.o
+  CC      fs/quota/quota_tree.o
+  CC      fs/tracefs/inode.o
+  AR      fs/ramfs/built-in.a
+  CC      fs/proc/root.o
+  SHIPPED fs/unicode/utf8data.h
+  CC      fs/unicode/utf8-core.o
+  AR      fs/pstore/built-in.a
+  CC      fs/unicode/utf8-norm.o
+  CC      fs/quota/quota.o
+  CC      fs/proc/base.o
+  CC      fs/sdcardfs/inode.o
+  CC      fs/sysfs/symlink.o
+  CC      fs/quota/kqid.o
+  AR      fs/tracefs/built-in.a
+  CC      fs/sdcardfs/main.o
+  CC      fs/sysfs/mount.o
+  CC      fs/verity/enable.o
+  CC      fs/verity/hash_algs.o
+  CC      fs/verity/init.o
+  AR      fs/unicode/built-in.a
+  CC      fs/sdcardfs/super.o
+  CC      fs/verity/measure.o
+  CC      fs/sysfs/group.o
+  CC      fs/quota/netlink.o
+  CC      fs/verity/open.o
+  CC      fs/sdcardfs/lookup.o
+  CC      fs/proc/generic.o
+  CC      fs/verity/read_metadata.o
+  CC      fs/sdcardfs/mmap.o
+  AR      fs/sysfs/built-in.a
+  CC      fs/proc/array.o
+  CC      fs/verity/verify.o
+  CC      fs/sdcardfs/packagelist.o
+  CC      fs/sdcardfs/derived_perm.o
+  CC      fs/open.o
+  CC      fs/proc/fd.o
+  CC      fs/proc/proc_tty.o
+  AR      fs/quota/built-in.a
+  CC      fs/proc/cmdline.o
+  CC      fs/proc/consoles.o
+  CC      fs/read_write.o
+  CC      fs/proc/cpuinfo.o
+  CC      fs/verity/signature.o
+  CC      fs/file_table.o
+  CC      fs/proc/devices.o
+  CC      fs/proc/interrupts.o
+  CC      fs/super.o
+  CC      fs/proc/loadavg.o
+  CC      fs/proc/meminfo.o
+  CC      fs/char_dev.o
+  AR      fs/verity/built-in.a
+  CC      fs/stat.o
+  CC      fs/proc/stat.o
+  CC      fs/proc/uptime.o
+  CC      fs/exec.o
+  CC      fs/proc/util.o
+  CC      fs/proc/version.o
+  CC      fs/pipe.o
+  AR      fs/sdcardfs/built-in.a
+  CC      fs/proc/softirqs.o
+  CC      fs/proc/namespaces.o
+  CC      fs/namei.o
+  CC      fs/proc/self.o
+  DTC     arch/arm64/boot/dts/vendor/qcom/kona-v2.1.dtb
+  CC      fs/proc/thread_self.o
+  CC      fs/proc/proc_sysctl.o
+  CC      fs/proc/proc_net.o
+  CC      fs/fcntl.o
+  CC      fs/proc/kmsg.o
+  CC      fs/ioctl.o
+  CC      fs/readdir.o
+-- ReSukiSU version code: 35013
+-- ReSukiSU version name: v4.1.0-537a2005@ReSukiSU
+-- Supported Unofficial Manager: MKSU, RKSU, KOWSU, SukiSU-Ultra, ReSukiSU 
+-- KERNEL_VERSION: 4.19
+-- KERNEL_TYPE: Non-GKI
+-- ReSukiSU: using SuSFS Inline hook
+  CC      fs/proc/page.o
+-- ReSukiSU/susfs_inline: ksu_handle_setresuid found
+-- ReSukiSU/susfs_inline: ksu_handle_execveat found
+-- ReSukiSU/susfs_inline: ksu_handle_faccessat found
+-- ReSukiSU/susfs_inline: ksu_handle_sys_read found
+-- ReSukiSU/susfs_inline: ksu_handle_stat found
+-- ReSukiSU/susfs_inline: ksu_handle_sys_reboot found
+-- ReSukiSU/susfs_inline: ksu_handle_input_handle_event found
+
+-- SUSFS_VERSION: v2.2.0
+-- ReSukiSU/compat: current_sid found
+-- ReSukiSU/compat: selinux_state found
+-- ReSukiSU/compat: strncpy found
+-- ReSukiSU/compat: kernel_read found
+-- ReSukiSU/compat: kernel_write found
+  CC      fs/select.o
+-- ReSukiSU/compat: selinux_inode found
+  CC      fs/dcache.o
+-- ReSukiSU/compat: selinux_cred found
+-- ReSukiSU/compat: seccomp_filter_count found
+-- ReSukiSU/compat: security_inode_init_security_anon found
+-- ReSukiSU/compat: anon_inode_getfd_secure found
+-- ReSukiSU/compat: file_inode() found
+  DTC     arch/arm64/boot/dts/vendor/qcom/alioth-sm8250-overlay.dtbo
+-- ReSukiSU/compat: ns_get_path found
+-- ReSukiSU/compat: modern dentry_open found
+-- ReSukiSU/compat: ext4_unregister_sysfs found
+-- ReSukiSU/compat: f_op->read_iter found
+-- ReSukiSU/compat: iterate_dir found
+-- ReSukiSU/compat: modern static_key_interface found
+-- ReSukiSU/compat: d_inode found
+-- ReSukiSU/compat: inode_lock found
+-- ReSukiSU/compat: modern errno file found
+-- ReSukiSU/compat: overflow.h found
+-- ReSukiSU/compat: modern proc ns header file found
+-- ReSukiSU/compat: android spec POLICYDB_CONFIG_ANDROID_NETLINK_ROUTE found!!
+-- ReSukiSU/compat: android spec POLICYDB_CONFIG_ANDROID_NETLINK_GETNEIGH found!!
+-- ReSukiSU/compat: found sidtab as reference
+-- ReSukiSU/compat: found hlist in security_hook_list
+-- ReSukiSU/compat: found required provide lsm name
+-- ReSukiSU/compat: found security_add_hooks
+  AR      fs/proc/built-in.a
+  CC      fs/inode.o
+  CC      fs/attr.o
+  CC      fs/bad_inode.o
+  CC      fs/file.o
+  CC      fs/filesystems.o
+  DTBOIMG arch/arm64/boot/dtbo.img
+  CC      fs/namespace.o
+  CC      fs/seq_file.o
+  DTC     arch/arm64/boot/dts/vendor/qcom/kona-v2.1.dtb
+  CC      fs/xattr.o
+  CC      fs/libfs.o
+  CC      fs/fs-writeback.o
+  CC      fs/pnode.o
+  CC      fs/splice.o
+  CC      fs/sync.o
+  CC      fs/utimes.o
+  CC      fs/d_path.o
+  CC      fs/stack.o
+  CAT     arch/arm64/boot/dtb.img
+  CC      fs/fs_struct.o
+  CC      fs/statfs.o
+  CC      fs/fs_pin.o
+  CC      fs/nsfs.o
+  CC      fs/fs_context.o
+  CC      fs/fs_parser.o
+  CC      fs/susfs.o
+  CC      fs/buffer.o
+  CC      fs/block_dev.o
+  CC      fs/direct-io.o
+  CC      fs/mpage.o
+  CC      fs/nomount.o
+  CC      fs/proc_namespace.o
+  CC      fs/eventpoll.o
+  CC      fs/anon_inodes.o
+  CC      fs/signalfd.o
+  CC      fs/timerfd.o
+  CC      fs/eventfd.o
+  CC      fs/userfaultfd.o
+  CC      fs/aio.o
+  CC      fs/locks.o
+  CC      fs/compat.o
+  CC      fs/compat_ioctl.o
+  CC      fs/binfmt_script.o
+  CC      fs/binfmt_elf.o
+  CC      fs/compat_binfmt_elf.o
+  CC      fs/mbcache.o
+  CC      fs/posix_acl.o
+  CC      fs/coredump.o
+  CC      fs/drop_caches.o
+  CC      fs/iomap.o
+  CC      fs/dcookies.o
+  AR      fs/built-in.a
+  GEN     .version
+  CHK     include/generated/compile.h
+  AR      built-in.a
+  MODPOST vmlinux.o
+  KSYM    .tmp_kallsyms1.o
+  KSYM    .tmp_kallsyms2.o
+  LD      vmlinux
+  SORTEX  vmlinux
+  SYSMAP  System.map
+  OBJCOPY arch/arm64/boot/Image
+  Building modules, stage 2.
+  MODPOST 6 modules
+  CC      drivers/media/usb/gspca/gspca_main.mod.o
+  CC      net/ipv4/tcp_bic.mod.o
+  CC      net/ipv4/tcp_htcp.mod.o
+  CC      net/ipv4/tcp_westwood.mod.o
+  CC      techpack/data/drivers/rmnet/perf/rmnet_perf.mod.o
+  CC      techpack/data/drivers/rmnet/shs/rmnet_shs.mod.o
+  LD [M]  techpack/data/drivers/rmnet/perf/rmnet_perf.ko
+  LD [M]  net/ipv4/tcp_htcp.ko
+  LD [M]  techpack/data/drivers/rmnet/shs/rmnet_shs.ko
+  LD [M]  net/ipv4/tcp_westwood.ko
+  LD [M]  drivers/media/usb/gspca/gspca_main.ko
+  LD [M]  net/ipv4/tcp_bic.ko
