@@ -14,6 +14,12 @@ jobs:
         with:
           ref: dream-next
 
+      - name: Free Disk Space
+        run: |
+         rm -rf /usr/share/dotnet
+         rm -rf /usr/local/lib/android
+         rm -rf /opt/ghc
+
       - name: Setup Toolchain
         run: |
           mkdir -p clang
