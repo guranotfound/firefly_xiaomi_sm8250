@@ -1,0 +1,60 @@
+name: Build Kernel (Custom Arch Commands)
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dream-next
+
+env:
+  KSU_COMMAND: ' <ksu-curl>'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Setup Toolchain
+        run: |
+          mkdir -p clang
+          curl -L "https://github.com/ZyCromerZ/Clang/releases/download/23.0.0git-20260130-release/Clang-23.0.0git-20260130.tar.gz" -o clang.tar.gz
+          tar -xf clang.tar.gz -C clang
+          rm clang.tar.gz
+
+      - name: Setup KernelSU
+        run: |
+          rm -rf drivers/kernelsu KernelSU-Next
+          eval "$KSU_COMMAND"
+
+      - name: Build Process
+        run: |
+          export ARCH=arm64
+          export SUBARCH=arm64
+          export HEADER_ARCH=arm64
+          export PATH="$(pwd)/clang/bin:$PATH"
+          
+          # Base Config
+          make O=out alioth_defconfig CC=clang LLVM=1 LLVM_IAS=1
+          
+          # Enable KSU in .config
+          ./scripts/config --file out/.config -e CONFIG_KSU
+          make O=out olddefconfig CC=clang LLVM=1 LLVM_IAS=1
+          
+          make -j$(nproc --all) O=out \
+            CC=clang \
+            LD=ld.lld \
+            AR=llvm-ar \
+            NM=llvm-nm \
+            CROSS_COMPILE=aarch64-linux-gnu- \
+            CROSS_COMPILE_COMPAT=arm-linux-gnueabi- \
+            LLVM=1 LLVM_IAS=1 Image.gz dtbo dtbs
+
+      - name: Upload Kernel, DTBO & DTB Artifacts
+        uses: actions/artifacts@v4
+        with:
+          name: alioth-kernel-files
+          path: |
+            out/arch/arm64/boot/Image.gz
+            out/arch/arm64/boot/dtbo.img
+            out/arch/arm64/boot/dts/vendor/qcom/*.dtb
