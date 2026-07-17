@@ -32,6 +32,9 @@ jobs:
           rm -rf drivers/kernelsu KernelSU-Next
           curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s legacy
 
+          echo "Silencing KernelSU-Next logs..."
+          find . -type f -name "*.c" \( -path "*kernelsu*" -o -path "*KernelSU*" \) -exec sed -i 's/pr_info(/pr_debug(/g' {} + || true
+
       - name: Build Process
         run: |
           export ARCH=arm64
