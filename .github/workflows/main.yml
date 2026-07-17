@@ -48,7 +48,7 @@ jobs:
             LLVM=1 LLVM_IAS=1 Image.gz dtbo dtbs
 
       - name: Upload Kernel, DTBO & DTB Artifacts
-        uses: actions/artifacts@v4
+        uses: actions/upload-artifact@v4
         with:
           name: alioth-kernel-files
           path: |
