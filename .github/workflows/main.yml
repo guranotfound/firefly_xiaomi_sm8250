@@ -5,9 +5,6 @@ on:
     branches:
       - dream-next
 
-env:
-  KSU_COMMAND: ' <ksu-curl>'
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +22,7 @@ jobs:
       - name: Setup KernelSU
         run: |
           rm -rf drivers/kernelsu KernelSU-Next
-          eval "$KSU_COMMAND"
+          curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s legacy
 
       - name: Build Process
         run: |
