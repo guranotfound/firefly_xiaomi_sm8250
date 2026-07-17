@@ -34,7 +34,7 @@ jobs:
           export PATH="$(pwd)/clang/bin:$PATH"
           
           # Base Config
-          make O=out alioth_defconfig CC=clang LLVM=1 LLVM_IAS=1
+          make O=out vendor/alioth_defconfig CC=clang LLVM=1 LLVM_IAS=1
           
           # Enable KSU in .config
           ./scripts/config --file out/.config -e CONFIG_KSU
