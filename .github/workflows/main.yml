@@ -47,7 +47,7 @@ jobs:
             NM=llvm-nm \
             CROSS_COMPILE=aarch64-linux-gnu- \
             CROSS_COMPILE_COMPAT=arm-linux-gnueabi- \
-            LLVM=1 LLVM_IAS=1 Image.gz dtbo dtbs
+            LLVM=1 LLVM_IAS=1
 
       - name: Upload Kernel, DTBO & DTB Artifacts
         uses: actions/upload-artifact@v4
