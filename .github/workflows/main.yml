@@ -63,6 +63,6 @@ jobs:
         with:
           name: alioth-kernel-files
           path: |
-            out/arch/arm64/boot/Image.gz
+            out/arch/arm64/boot/Image
             out/arch/arm64/boot/dtbo.img
             out/arch/arm64/boot/dts/vendor/qcom/*.dtb
